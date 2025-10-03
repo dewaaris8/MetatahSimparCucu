@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 const slides = [
-  "/images/slideshow1.jpg",
-  "/images/slideshow2.jpg",
-  "/images/slideshow3.jpg",
-  "/images/slideshow4.jpg",
+  "/images/slideshow1.JPG",
+  "/images/slideshow2.JPG",
+  "/images/slideshow3.JPG",
+  "/images/slideshow4.JPG",
 ];
 
 export default function Slideshow() {

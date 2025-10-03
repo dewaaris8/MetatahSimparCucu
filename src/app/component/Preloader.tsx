@@ -4,9 +4,9 @@ import Image from "next/image";
 import gsap from "gsap";
 
 const images = [
-  "/images/Page 1.jpg",
-  "/images/Gallery 1.jpg",
-  "/images/Gallery 2.jpg",
+  "/images/gallery3.jpg",
+  "/images/gallery1.jpg",
+  "/images/gallery2.jpg",
 ];
 
 export default function Preloader({ onFinish }: { onFinish: () => void }) {
