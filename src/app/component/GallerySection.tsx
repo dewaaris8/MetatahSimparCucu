@@ -107,10 +107,10 @@ export default function zGallerySection() {
               className="w-full h-auto"
             />
             <Image
-              src="/images/gallery4.jpg"
+              src="/images/gallery3.jpg"
               alt="gallery 5"
               width={1200}
-              height={1000}
+              height={800}
               className="w-full h-auto"
             />
           </div>
