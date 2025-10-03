@@ -1,0 +1,86 @@
+.section {
+  position: relative;
+  width: 100vw;
+  height: 100svh;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.intro,
+.outro {
+  height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: black;
+}
+
+.intro h1,
+.outro h1 {
+  width: 50%;
+  text-align: center;
+}
+
+.spotlight {
+  background-color: black;
+  color: white;
+  height: 100svh;
+}
+
+.spotlightImages,
+.spotlightCoverImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  perspective: 2000px;
+}
+
+.img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 350px;
+  will-change: transform;
+}
+
+.spotlightCoverImg {
+  will-change: transform;
+}
+
+.spotlightIntroHeader,
+.spotlightOutroHeader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 50%;
+}
+
+.spotlightIntroHeader {
+  z-index: 1;
+}
+
+.spotlightOutroHeader {
+  z-index: 10;
+}
+
+@media (max-width: 1000px) {
+  .intro h1,
+  .outro h1,
+  .spotlightIntroHeader,
+  .spotlightOutroHeader {
+    width: 100%;
+  }
+
+  .spotlightIntroHeader,
+  .spotlightOutroHeader {
+    padding: 2rem;
+  }
+}
