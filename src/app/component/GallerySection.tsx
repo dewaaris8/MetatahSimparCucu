@@ -7,14 +7,14 @@ import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function zGallerySection() {
+export default function ZGallerySection() {
   useEffect(() => {
     let ctx = gsap.context(() => {
       let tl7 = gsap.timeline({
         scrollTrigger: {
           trigger: ".part-7",
-          start: "50% 50%",
-          end: "300% -200%",
+          start: "center center", // baru mulai pas section pas di tengah layar
+          end: "300% top",
           pin: true,
           scrub: 1,
           invalidateOnRefresh: true,
@@ -22,31 +22,31 @@ export default function zGallerySection() {
         },
       });
 
-      // buka box putih
-      tl7.to(".our-work-txt-div", { height: "70vh" }, "open");
+      // buka box putih dari tengah
+      tl7.fromTo(
+        ".our-work-txt-div",
+        { height: 0, transformOrigin: "center center" },
+        { height: "70vh", ease: "power2.out" },
+        "open"
+      );
 
-      // animasi teks ikut box
-      tl7.to(
+      // teks besar → kecil + geser
+      tl7.fromTo(
         "#our",
-        {
-          x: "-28vw", // geser kiri
-          y: "-30vh", // geser atas
-          fontSize: "2.5vw",
-        },
-        "open"
-      );
-      tl7.to(
-        "#gallery",
-        {
-          x: "28vw", // geser kanan
-          y: "30vh", // geser bawah
-          fontSize: "2.5vw",
-        },
+        { x: 0, y: 0, fontSize: "8vw" },
+        { x: "-28vw", y: "-30vh", fontSize: "2.5vw" },
         "open"
       );
 
-      // jalanin gambar
-      tl7.to(".scroll-img", { marginTop: "-500%" });
+      tl7.fromTo(
+        "#gallery",
+        { x: 0, y: 0, fontSize: "8vw" },
+        { x: "28vw", y: "30vh", fontSize: "2.5vw" },
+        "open"
+      );
+
+      // gambar mulai jalan setelah box kebuka
+      tl7.to(".scroll-img", { marginTop: "-500%" }, ">");
     });
 
     return () => ctx.revert();
@@ -54,21 +54,24 @@ export default function zGallerySection() {
 
   return (
     <section className="part-7 flex items-center justify-center w-full h-screen relative overflow-hidden">
-      {/* 🔹 TEXT sejajar awal di tengah */}
-      <div className="absolute flex gap-4 z-20">
-        <h1 id="our" className="text-[#ffffff] text-[2.5vw] font-[Parisienne]">
+      {/* 🔹 TEXT awal center */}
+      <div className="absolute flex gap-4 z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <h1
+          id="our"
+          className="text-[#ffffff] text-[8vw] md:text-[4vw] font-[Parisienne]"
+        >
           Our
         </h1>
         <h1
           id="gallery"
-          className="text-[#ffffff] text-[2.5vw] font-[Parisienne]"
+          className="text-[#ffffff] text-[8vw] md:text-[4vw] font-[Parisienne]"
         >
           Gallery
         </h1>
       </div>
 
       {/* 🔹 Box putih + gambar */}
-      <div className="our-work-txt-div relative overflow-hidden flex items-center justify-center w-[100%] h-0  z-10">
+      <div className="our-work-txt-div relative overflow-hidden flex items-center justify-center w-full h-0 z-10 bg-white">
         <div className="scroll-work w-full h-[70vh] overflow-hidden">
           <div className="scroll-img w-full mt-0 flex flex-col">
             <Image
@@ -108,7 +111,7 @@ export default function zGallerySection() {
             />
             <Image
               src="/images/gallery3.jpg"
-              alt="gallery 5"
+              alt="gallery 6"
               width={1200}
               height={800}
               className="w-full h-auto"
