@@ -9,11 +9,18 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function GallerySection() {
   useEffect(() => {
+    const textEl = document.querySelector(".text-trigger");
+
+    if (!textEl) return; // ✅ amanin kalau element tidak ada
+
     let ctx = gsap.context(() => {
       let tl7 = gsap.timeline({
         scrollTrigger: {
           trigger: ".part-7",
-          start: "center center", // baru mulai pas section pas di tengah layar
+          start: () =>
+            textEl.getBoundingClientRect().top +
+            window.scrollY -
+            window.innerHeight / 2, // posisi dinamis
           end: "300% top",
           pin: true,
           scrub: 1,
@@ -55,7 +62,7 @@ export default function GallerySection() {
   return (
     <section className="part-7 flex items-center justify-center w-full h-[100vh] relative overflow-hidden">
       {/* 🔹 TEXT awal center */}
-      <div className="absolute flex gap-4 z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+      <div className="absolute flex gap-4 z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-trigger">
         <h1
           id="our"
           className="text-[#ffffff] text-[30px] md:text-[20px] font-[Parisienne]"

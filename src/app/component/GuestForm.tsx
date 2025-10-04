@@ -191,7 +191,7 @@ export default function GuestForm() {
       </form>
 
       {/* LIST TAMU */}
-      <div className="text-white mt-6">
+      {/* <div className="text-white mt-6">
         <h3 className="text-[14px] font-mono uppercase mb-2">Guest List</h3>
         <div className="max-h-[300px] overflow-y-auto border border-white/30 rounded-md p-3 space-y-3">
           {guests.length === 0 ? (
@@ -219,7 +219,7 @@ export default function GuestForm() {
             ))
           )}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
