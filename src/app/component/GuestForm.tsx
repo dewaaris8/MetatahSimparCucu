@@ -109,6 +109,14 @@ export default function GuestForm() {
             className="border-b-2 font-mono w-full border-white bg-transparent p-2 text-white text-[13px] focus:outline-none focus:border-[#e6c643] transition duration-300"
             required
           >
+            <option
+              value=""
+              disabled
+              hidden
+              className="text-gray-400 font-mono"
+            >
+              Select Attendance
+            </option>
             <option value="Hadir" className="text-black font-mono">
               Yes
             </option>
@@ -128,6 +136,14 @@ export default function GuestForm() {
             className="border-b-2 border-white font-mono w-full bg-transparent p-2 text-white text-[13px] focus:outline-none focus:border-[#e6c643] transition duration-300"
             required
           >
+            <option
+              value=""
+              disabled
+              hidden
+              className="text-gray-400 font-Comfortaa"
+            >
+              Select Pax
+            </option>
             <option value="1" className="text-black font-Comfortaa">
               1
             </option>
