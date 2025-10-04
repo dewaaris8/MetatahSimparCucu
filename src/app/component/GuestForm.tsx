@@ -156,7 +156,7 @@ export default function GuestForm() {
             >
               Select Pax
             </option>
-            <option value="0" className="text-black font-Comfortaa">
+            <option value="0" hidden className="text-black font-Comfortaa">
               0
             </option>
             <option value="1" className="text-black font-Comfortaa">
