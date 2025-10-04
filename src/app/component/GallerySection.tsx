@@ -25,7 +25,7 @@ export default function GallerySection() {
           pin: true,
           scrub: 1,
           invalidateOnRefresh: true,
-          markers: true,
+          // markers: true,
         },
       });
 
