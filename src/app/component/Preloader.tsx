@@ -75,13 +75,20 @@ export default function Preloader({ onFinish }: { onFinish: () => void }) {
       </div>
 
       {/* Overlay teks */}
-      <div className="relative z-50 text-center">
-        <h1 className="preloader-title text-3xl md:text-5xl font-bold text-white drop-shadow-lg">
+      <div className="relative z-50 text-white text-center">
+        <h3 className=" preloader-title text-white font-Kodchasan uppercase">
+          Metatah
+        </h3>
+        <h1 className="preloader-title text-white text-[50px] font-MeieScript ">
+          Cucu Simpar
+        </h1>
+        <h3 className="preloader-sub text-white font-mono">12 - 10 - 25</h3>
+        {/* <h1 className="preloader-title text-[40px] md:text-[40px] font-MeieScript text-white drop-shadow-lg">
           Metatah Cucu Simpar
         </h1>
-        <p className="preloader-sub text-lg md:text-2xl text-white/80 italic mt-2">
-          12 September 2025
-        </p>
+        <p className="preloader-sub font-mono text-lg md:text-2xl text-white/80 italic mt-2">
+          12 October 2025
+        </p> */}
       </div>
     </div>
   );

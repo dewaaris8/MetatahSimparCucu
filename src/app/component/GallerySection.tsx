@@ -7,7 +7,7 @@ import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function ZGallerySection() {
+export default function GallerySection() {
   useEffect(() => {
     let ctx = gsap.context(() => {
       let tl7 = gsap.timeline({
@@ -18,7 +18,7 @@ export default function ZGallerySection() {
           pin: true,
           scrub: 1,
           invalidateOnRefresh: true,
-          // markers: true,
+          markers: true,
         },
       });
 
@@ -33,15 +33,15 @@ export default function ZGallerySection() {
       // teks besar → kecil + geser
       tl7.fromTo(
         "#our",
-        { x: 0, y: 0, fontSize: "8vw" },
-        { x: "-28vw", y: "-30vh", fontSize: "2.5vw" },
+        { x: 0, y: 0, fontSize: "30px" },
+        { x: "-28vw", y: "-30vh", fontSize: "10px" },
         "open"
       );
 
       tl7.fromTo(
         "#gallery",
-        { x: 0, y: 0, fontSize: "8vw" },
-        { x: "28vw", y: "30vh", fontSize: "2.5vw" },
+        { x: 0, y: 0, fontSize: "30px" },
+        { x: "28vw", y: "30vh", fontSize: "10px" },
         "open"
       );
 
@@ -53,18 +53,18 @@ export default function ZGallerySection() {
   }, []);
 
   return (
-    <section className="part-7 flex items-center justify-center w-full h-screen relative overflow-hidden">
+    <section className="part-7 flex items-center justify-center w-full h-[100vh] relative overflow-hidden">
       {/* 🔹 TEXT awal center */}
       <div className="absolute flex gap-4 z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <h1
           id="our"
-          className="text-[#ffffff] text-[8vw] md:text-[4vw] font-[Parisienne]"
+          className="text-[#ffffff] text-[30px] md:text-[20px] font-[Parisienne]"
         >
           Our
         </h1>
         <h1
           id="gallery"
-          className="text-[#ffffff] text-[8vw] md:text-[4vw] font-[Parisienne]"
+          className="text-[#ffffff] text-[30px] md:text-[20px] font-[Parisienne]"
         >
           Gallery
         </h1>

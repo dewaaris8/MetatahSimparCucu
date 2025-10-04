@@ -44,7 +44,7 @@ export default function ReceptionBox() {
         Sunday, October 12, 2025
       </p>
       <h1 className="text-[12px] uppercase mt-5 tracking-[2px] font-Comfortaa z-30">
-        Time: 5:00 PM – 8:00 PM WITA
+        Time: 5.30 - 9 PM WITA
       </h1>
       <h1 className="text-[12px] mt-5 font-Comfortaa uppercase z-30 tracking-[2px]">
         Taman Prakerti Bhuana
