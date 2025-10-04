@@ -5,7 +5,7 @@ export default function GuestForm() {
   const [form, setForm] = useState({
     name: "",
     attendance: "",
-    pax: "1",
+    pax: "",
     wishes: "",
   });
   const [toast, setToast] = useState<{
@@ -30,7 +30,14 @@ export default function GuestForm() {
 
   // Handler form
   const handleChange = (e: any) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+
+    // Jika attendance = Tidak Hadir → pax otomatis 0
+    if (name === "attendance" && value === "Tidak Hadir") {
+      setForm({ ...form, attendance: value, pax: "0" });
+    } else {
+      setForm({ ...form, [name]: value });
+    }
   };
 
   // Toast handler
@@ -50,7 +57,7 @@ export default function GuestForm() {
 
     if (res.ok) {
       showToastMessage("Your message has been sent with love.", "success");
-      setForm({ name: "", attendance: "", pax: "1", wishes: "" });
+      setForm({ name: "", attendance: "", pax: "", wishes: "" }); // reset kosong
       fetchGuests();
     } else {
       showToastMessage("❌ Gagal menyimpan data", "error");
@@ -133,7 +140,12 @@ export default function GuestForm() {
             name="pax"
             value={form.pax}
             onChange={handleChange}
-            className="border-b-2 border-white font-mono w-full bg-transparent p-2 text-white text-[13px] focus:outline-none focus:border-[#e6c643] transition duration-300"
+            disabled={form.attendance === "Tidak Hadir"} // 🔒 lock kalau Tidak Hadir
+            className={`border-b-2 border-white font-mono w-full bg-transparent p-2 text-white text-[13px] focus:outline-none transition duration-300 ${
+              form.attendance === "Tidak Hadir"
+                ? "opacity-50 cursor-not-allowed"
+                : "focus:border-[#e6c643]"
+            }`}
             required
           >
             <option
@@ -143,6 +155,9 @@ export default function GuestForm() {
               className="text-gray-400 font-Comfortaa"
             >
               Select Pax
+            </option>
+            <option value="0" className="text-black font-Comfortaa">
+              0
             </option>
             <option value="1" className="text-black font-Comfortaa">
               1

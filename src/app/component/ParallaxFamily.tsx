@@ -77,10 +77,10 @@ export default function ParallaxFamily() {
         </div>
         <div className="w-[100%] text-left">
           <h1 className="font-Kodchasan text-[20px] font-semibold uppercase">
-            Dewa Ayu Carltina Dewi
+            Dewa Ayu Carltina Dewi, S.Tr.Par
           </h1>
           <p className="font-Kodchasan text-[12px] mt-3">
-            Son of Mr. Dewa Ketut Putra & Mrs. Dewi Ambayuni
+            Daughter of Mr. Dewa Putra & Mrs. Dewi Ambayuni
           </p>
         </div>
       </div>
@@ -101,10 +101,10 @@ export default function ParallaxFamily() {
         </div>
         <div className="w-[100%] text-right">
           <h1 className="font-Kodchasan text-[20px] font-semibold uppercase">
-            Dewa Gede Bayu Pradana Putra
+            Dewa Gede Bayu Pradana Putra, S.ars
           </h1>
           <p className="font-Kodchasan text-[12px] mt-3">
-            Son of Mr. Dewa Ketut Putra & Mrs. Dewi Ambayuni
+            Son of Mr. Dewa Putra & Mrs. Dewi Ambayuni
           </p>
         </div>
       </div>
@@ -125,10 +125,10 @@ export default function ParallaxFamily() {
         </div>
         <div className="w-[100%] text-left">
           <h1 className="font-Kodchasan text-[20px] font-semibold uppercase">
-            Dewa Gede Arista Widana Putra
+            Dewa Gede Arista Widana Putra, S.kom
           </h1>
           <p className="font-Kodchasan text-[12px] mt-3">
-            Son of Mr. Dewa Ketut Putra & Mrs. Dewi Ambayuni
+            Son of Mr. Dewa Putra & Mrs. Dewi Ambayuni
           </p>
         </div>
       </div>
