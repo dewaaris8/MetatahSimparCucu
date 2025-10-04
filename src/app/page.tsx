@@ -250,7 +250,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className=" h-max relative px-8 w-full">
+            <div className=" h-[70vh] relative px-8 w-full">
               <GuestForm />
             </div>
             <div className="w-full h-max p-8">
