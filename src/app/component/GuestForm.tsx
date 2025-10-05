@@ -85,20 +85,21 @@ export default function GuestForm() {
         className="mt-4 flex h-max flex-col font-Comfortaa gap-4 py-6 relative"
       >
         <div className="z-10 text-white text-center w-full flex flex-col">
-          <p className="font-mono text-left text-[12px]">
-            We kindly ask you to confirm your attendance and feel free to leave
-            your wishes below. It bring us great joy to celebrate this
-            meaningful day with you.
+          <p className="font-mono text-justify text-[12px]">
+            Kami dengan senang hati mengundang Anda untuk mengonfirmasi
+            kehadiran, dan jangan ragu untuk meninggalkan ucapan atau doa Anda
+            di bawah ini. Merupakan kebahagiaan bagi kami dapat merayakan hari
+            istimewa ini bersama Anda.
           </p>
         </div>
 
         {/* NAME */}
         <div className="text-white w-full">
-          <h3 className="text-[13px] font-mono uppercase">Name</h3>
+          <h3 className="text-[13px] font-mono uppercase">Nama</h3>
           <input
             type="text"
             name="name"
-            placeholder="Input Your Name"
+            placeholder="Masukkan Nama Anda"
             className="font-mono w-full uppercase border-b-2 border-white bg-transparent text-[13px] p-2 text-white focus:outline-none focus:border-[#e6c643] transition duration-300 placeholder-white"
             required
             value={form.name}
@@ -122,7 +123,7 @@ export default function GuestForm() {
               hidden
               className="text-gray-400 font-mono"
             >
-              Select Attendance
+              Pilih Kehadiran
             </option>
             <option value="Hadir" className="text-black font-mono">
               Yes
@@ -135,7 +136,7 @@ export default function GuestForm() {
 
         {/* PAX */}
         <div className="text-white w-full">
-          <h3 className="text-[13px] font-mono uppercase">Number of Pax</h3>
+          <h3 className="text-[13px] font-mono uppercase">Jumlah Tamu</h3>
           <select
             name="pax"
             value={form.pax}
@@ -154,7 +155,7 @@ export default function GuestForm() {
               hidden
               className="text-gray-400 font-Comfortaa"
             >
-              Select Pax
+              Pilih Jumlah Tamu
             </option>
             <option value="0" hidden className="text-black font-Comfortaa">
               0
@@ -172,12 +173,12 @@ export default function GuestForm() {
         </div>
 
         {/* WISHES */}
-        <h3 className="text-[13px] font-mono uppercase">wishes</h3>
+        <h3 className="text-[13px] font-mono uppercase">Ucapan dan Doa</h3>
         <textarea
           name="wishes"
           value={form.wishes}
           onChange={handleChange}
-          placeholder="Input Your Wishes"
+          placeholder="Masukkan ucapan anda"
           className="font-mono text-[13px] border-b-2 border-white bg-transparent p-2 text-white focus:outline-none focus:border-[#e6c643] transition duration-300 placeholder-white"
           required
         />
@@ -186,13 +187,13 @@ export default function GuestForm() {
           type="submit"
           className="bg-gradient-to-r text-[13px] from-[#e6c643] to-[#c8a530] text-black font-semibold p-2 mt-2 hover:opacity-90 transition duration-300 cursor-pointer z-50"
         >
-          Share Your Wishes
+          Bagikan ucapan anda
         </button>
       </form>
 
       {/* LIST TAMU */}
       <div className="text-white mt-6">
-        <h3 className="text-[14px] font-mono uppercase mb-2">Guest List</h3>
+        <h3 className="text-[14px] font-mono uppercase mb-2">Daftar Tamu</h3>
         <div className="max-h-[300px] overflow-y-auto border border-white/30 rounded-md p-3 space-y-3">
           {guests.length === 0 ? (
             <p className="text-[12px] text-gray-400">Belum ada data tamu</p>
@@ -204,13 +205,7 @@ export default function GuestForm() {
               >
                 <p className="font-semibold uppercase text-[13px]">
                   {guest.name}{" "}
-                  <span className="text-yellow-400">
-                    {guest.attendance === "Hadir"
-                      ? "(Will Attend)"
-                      : guest.attendance === "Tidak Hadir"
-                      ? "(Will Not Attend)"
-                      : guest.attandance}
-                  </span>
+                  <span className="text-yellow-400">{guest.attendance}</span>
                 </p>
                 <p className="italic text-[12px] text-gray-300">
                   “{guest.wishes}”

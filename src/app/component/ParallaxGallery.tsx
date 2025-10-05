@@ -13,18 +13,21 @@ export default function ParallaxGallery() {
   useEffect(() => {
     if (!galleryRef.current) return;
 
-    const images = galleryRef.current.querySelectorAll(".parallax-item");
+    const sections = galleryRef.current.querySelectorAll(".parallax-section");
 
-    images.forEach((img) => {
+    sections.forEach((section) => {
+      const img = section.querySelector(".parallax-item");
+      if (!img) return;
+
       gsap.fromTo(
         img,
-        { yPercent: -15, scale: 1.2 }, // mulai agak zoom & geser
+        { yPercent: -15, scale: 1.2 },
         {
-          yPercent: 15, // turun sedikit saat scroll
-          scale: 1, // zoom-out smooth
+          yPercent: 15,
+          scale: 1,
           ease: "none",
           scrollTrigger: {
-            trigger: img,
+            trigger: section,
             start: "top bottom",
             end: "bottom top",
             scrub: true,
@@ -34,20 +37,48 @@ export default function ParallaxGallery() {
     });
   }, []);
 
+  // 👇 kamu bisa atur ukuran berbeda di sini
+  const galleryItems = [
+    { src: "/images/scroll1.JPG", height: "h-[70vh]", width: "w-full" },
+    {
+      src: "/images/scroll2.JPG",
+      height: "h-[60vh]",
+      width: "w-3/4 mx-auto",
+      back: "bg-left",
+    },
+    { src: "/images/scroll3.JPG", height: "h-[60vh]", width: "w-[90%]" },
+    {
+      src: "/images/scroll4.JPG",
+      height: "h-[45vh]",
+      width: "w-[70%] ml-auto",
+    },
+    { src: "/images/scroll5.JPG", height: "h-[55vh]", width: "w-full" },
+    {
+      src: "/images/scroll6.JPG",
+      height: "h-[35vh]",
+      width: "w-[80%] mx-auto",
+    },
+    { src: "/images/scroll7.JPG", height: "h-[65vh]", width: "w-full" },
+    // {
+    //   src: "/images/scroll8.JPG",
+    //   height: "h-[70vh]",
+    //   width: "w-[75%] ml-auto",
+    // },
+  ];
+
   return (
     <section ref={galleryRef} className="space-y-16 p-6">
-      {[...Array(8)].map((_, i) => (
+      {galleryItems.map((item, i) => (
         <div
           key={i}
-          className="relative w-full h-[30vh] md:h-[50vh] overflow-hidden "
+          className={`parallax-section relative overflow-hidden ${item.back}  shadow-lg ${item.height} w-full`}
         >
           <Image
-            src={`/images/scroll${i + 1}.JPG`}
+            src={item.src}
             alt={`Parallax ${i + 1}`}
             fill
             priority
-            loading="eager"
-            className="parallax-item object-cover"
+            className="parallax-item bg-center object-cover"
           />
         </div>
       ))}

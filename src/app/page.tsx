@@ -40,7 +40,7 @@ export default function Home() {
         <ReactLenis root options={{ duration: 8 }}>
           <div className="flex h-screen justify-end">
             {/* Kiri */}
-            <div className="w-[calc(100%-425px)] h-screen fixed top-0 left-0">
+            <div className="w-[calc(100%-425px)]  h-screen fixed top-0 left-0">
               <Image
                 src="/images/gallery7.jpg"
                 alt="Wedding Background"
@@ -110,9 +110,10 @@ export default function Home() {
                       Om Swastiastu
                     </h1>
                     <p className="font-Kodchasan  text-justify text-[12px] mt-3">
-                      By the grace and blessings of Ida Sang Hyang Widhi
-                      Wasa/God Almighty, we cordially invite you to our potong
-                      gigi ceremony (Manusa Yadnya Metatah)
+                      Atas rahmat dan karunia Ida Sang Hyang Widhi Wasa/Tuhan
+                      Yang Maha Esa, kami dengan hormat mengundang
+                      saudara-saudara pada upacara potong gigi (Manusa Yadnya
+                      Metatah)
                     </p>
                   </div>
                   <div className="w-full mt-10 flex flex-col gap-5">
@@ -258,7 +259,7 @@ export default function Home() {
               <div className="w-full h-max p-8">
                 <GallerySection />
               </div>
-              <div className="w-full h-max mb-80  ">
+              <div className="w-full h-max py-[50px] mb-80  ">
                 <ParallaxGallery />
               </div>
               <div className="w-full h-[80vh] mt-[100px]">
@@ -267,10 +268,11 @@ export default function Home() {
               <div className="w-full px-8 h-[20vh] flex flex-col justify-start items-center mt-[-300px] text-center">
                 <div className="mt-[-100px]">
                   <h3 className="font-mono">12 - 10 - 25</h3>
-                  <h1 className="text-[50px] font-MeieScript ">Thank You</h1>
+                  <h1 className="text-[50px] font-MeieScript ">Terimakasih</h1>
                   <p className="font-Kodchasan text-center text-[12px]">
-                    Looking forward to having you with us and creating special
-                    memories together at our event.
+                    Ucapan dan doa yang kamu sampaikan adalah anugerah berarti
+                    bagi kami. Kami menantikan momen istimewa untuk merayakannya
+                    bersama.
                   </p>
                 </div>
               </div>

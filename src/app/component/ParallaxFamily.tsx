@@ -80,7 +80,7 @@ export default function ParallaxFamily() {
             Dewa Ayu Carltina Dewi, S.Tr.Par
           </h1>
           <p className="font-Kodchasan text-[12px] mt-3">
-            Daughter of Mr. Dewa Putra & Mrs. Dewi Ambayuni
+            Putri dari Bapak Dewa Putra & Ibu Dewi Ambayuni
           </p>
         </div>
       </div>
@@ -104,7 +104,7 @@ export default function ParallaxFamily() {
             Dewa Gede Bayu Pradana Putra, S.ars
           </h1>
           <p className="font-Kodchasan text-[12px] mt-3">
-            Son of Mr. Dewa Putra & Mrs. Dewi Ambayuni
+            Putra dari Bapak Dewa Putra & Ibu Dewi Ambayuni
           </p>
         </div>
       </div>
@@ -128,7 +128,7 @@ export default function ParallaxFamily() {
             Dewa Gede Arista Widana Putra, S.kom
           </h1>
           <p className="font-Kodchasan text-[12px] mt-3">
-            Son of Mr. Dewa Putra & Mrs. Dewi Ambayuni
+            Putra dari Bapak Dewa Putra & Ibu Dewi Ambayuni
           </p>
         </div>
       </div>
@@ -152,7 +152,7 @@ export default function ParallaxFamily() {
             Dewa Gede Lion Trump Putra
           </h1>
           <p className="font-Kodchasan text-[12px] mt-3">
-            Son of Mr. Dewa Putu Alit & Mrs. Eva Yunita
+            Putra dari Bapak Dewa Putu Alit & Ibu Eva Yunita
           </p>
         </div>
       </div>

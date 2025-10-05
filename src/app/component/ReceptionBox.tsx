@@ -38,13 +38,13 @@ export default function ReceptionBox() {
 
       {/* konten utama */}
       <p className="text-[28px] mt-5 z-30 font-[500] tracking-[2px] font-NotoSerif w-[85%]">
-        Reception
+        Resepsi
       </p>
       <p className="text-[12px] mt-5 z-30 uppercase tracking-[2px] font-Comfortaa w-[85%]">
-        Sunday, October 12, 2025
+        Minggu, Oktober 12, 2025
       </p>
       <h1 className="text-[12px] uppercase mt-5 tracking-[2px] font-Comfortaa z-30">
-        Time: 5.30 - 9 PM WITA
+        Waktu: 5.30 - 9 PM WITA
       </h1>
       <h1 className="text-[12px] mt-5 font-Comfortaa uppercase z-30 tracking-[2px]">
         Taman Prakerti Bhuana
@@ -57,7 +57,7 @@ export default function ReceptionBox() {
         className="bg-gradient-to-r text-[13px] from-[#e6c643] to-[#c8a530] text-black mt-5 font-Comfortaa px-10 py-2 z-[100]  shadow-md"
         href="https://maps.app.goo.gl/BDTCXj1127ALtCCD7"
       >
-        Get Direction
+        GOOGLE MAPS
       </a>
     </div>
   );
