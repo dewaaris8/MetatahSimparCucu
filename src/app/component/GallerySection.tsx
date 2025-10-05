@@ -82,44 +82,50 @@ export default function GallerySection() {
         <div className="scroll-work w-full h-[70vh] overflow-hidden">
           <div className="scroll-img w-full mt-0 flex flex-col">
             <Image
-              src="/images/gallery1.jpg"
+              src="/images/gallery2.jpg"
               alt="gallery 1"
               width={1200}
+              loading="eager"
               height={800}
               className="w-full h-auto"
             />
             <Image
-              src="/images/gallery2.jpg"
+              src="/images/scroll3.JPG"
               alt="gallery 2"
               width={1200}
+              loading="eager"
               height={800}
               className="w-full h-auto"
             />
             <Image
-              src="/images/gallery3.jpg"
+              src="/images/scroll1.JPG"
               alt="gallery 3"
               width={1200}
+              loading="eager"
               height={800}
               className="w-full h-auto"
             />
             <Image
-              src="/images/gallery4.jpg"
+              src="/images/gallery6.jpg"
               alt="gallery 4"
               width={1200}
+              loading="eager"
               height={800}
               className="w-full h-auto"
             />
             <Image
-              src="/images/gallery5.jpg"
+              src="/images/scroll2.JPG"
               alt="gallery 5"
               width={1200}
+              loading="eager"
               height={800}
-              className="w-full h-auto"
+              className="w-full h-[400px] object-cover object-left"
             />
             <Image
-              src="/images/gallery3.jpg"
+              src="/images/scroll4.JPG"
               alt="gallery 6"
               width={1200}
+              loading="eager"
               height={800}
               className="w-full h-auto"
             />

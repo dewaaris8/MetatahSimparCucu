@@ -4,7 +4,7 @@ import Image from "next/image";
 import gsap from "gsap";
 
 const images = [
-  "/images/yuka.jpg",
+  "/images/yuka2.jpg",
   "/images/bayu.jpg",
   "/images/ais.jpg",
   "/images/tump.jpg",

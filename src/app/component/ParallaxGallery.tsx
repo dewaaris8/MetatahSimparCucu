@@ -36,16 +36,17 @@ export default function ParallaxGallery() {
 
   return (
     <section ref={galleryRef} className="space-y-16 p-6">
-      {[...Array(5)].map((_, i) => (
+      {[...Array(8)].map((_, i) => (
         <div
           key={i}
           className="relative w-full h-[30vh] md:h-[50vh] overflow-hidden "
         >
           <Image
-            src={`/images/gallery${i + 1}.jpg`}
+            src={`/images/scroll${i + 1}.JPG`}
             alt={`Parallax ${i + 1}`}
             fill
             priority
+            loading="eager"
             className="parallax-item object-cover"
           />
         </div>
