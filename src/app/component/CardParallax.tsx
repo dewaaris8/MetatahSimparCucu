@@ -54,7 +54,7 @@ export default function CardParallax() {
     <div className="w-full flex items-center justify-center py-10">
       <div
         ref={containerRef}
-        className="relative w-full max-w-[200px] h-[500px] sm:h-[300px]"
+        className="relative w-full max-w-[200px] h-[300px] sm:h-[300px]"
       >
         {/* Card stack */}
         <div className="absolute inset-0 card">
