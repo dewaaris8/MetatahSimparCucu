@@ -68,7 +68,7 @@ export default function ParallaxFamily() {
           style={{ boxShadow: "10px 10px 20px rgba(0,0,0,0.6)" }}
         >
           <Image
-            src="/images/yuka.jpg"
+            src="/images/yuka2.jpg"
             alt="Wedding Background"
             fill
             priority
