@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -25,6 +25,31 @@ export default function Home() {
   const [showPreloader, setShowPreloader] = useState(true);
   const [current, setCurrent] = useState(0);
   const to = searchParams.get("to");
+
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Coba autoplay langsung
+    const tryPlay = async () => {
+      try {
+        await video.play();
+      } catch (err) {
+        // Kalau gagal, tunggu interaksi user (klik / sentuh)
+        const playOnInteraction = () => {
+          video.play().catch(() => {});
+          document.removeEventListener("click", playOnInteraction);
+          document.removeEventListener("touchstart", playOnInteraction);
+        };
+        document.addEventListener("click", playOnInteraction);
+        document.addEventListener("touchstart", playOnInteraction);
+      }
+    };
+
+    tryPlay();
+  }, []);
 
   // useEffect(() => {
   //   const interval = setInterval(() => {
@@ -58,10 +83,12 @@ export default function Home() {
               {/* image video */}
               <div className="fixed right-0 top-0 w-[425px] h-screen -z-10">
                 <video
+                  ref={videoRef}
                   autoPlay
                   loop
                   muted
                   playsInline
+                  preload="auto"
                   className="w-full h-full object-cover object-center"
                 >
                   <source src="/videos/bg2.mp4" type="video/mp4" />
@@ -265,7 +292,7 @@ export default function Home() {
               <div className="w-full h-max mt-[100px]">
                 <CardParallax />
               </div>
-              <div className="w-full px-8 h-[50vh] flex flex-col justify-start items-center mt-[-300px] text-center">
+              <div className="w-full px-8 h-[60vh] flex flex-col justify-start items-center mt-[-300px] text-center">
                 <div className="mt-[200px]">
                   <h3 className="font-mono">12 - 10 - 25</h3>
                   <h1 className="text-[50px] font-MeieScript ">Terima Kasih</h1>
