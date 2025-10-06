@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -25,6 +25,31 @@ export default function Home() {
   const [showPreloader, setShowPreloader] = useState(true);
   const [current, setCurrent] = useState(0);
   const to = searchParams.get("to");
+
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Coba autoplay langsung
+    const tryPlay = async () => {
+      try {
+        await video.play();
+      } catch (err) {
+        // Kalau gagal, tunggu interaksi user (klik / sentuh)
+        const playOnInteraction = () => {
+          video.play().catch(() => {});
+          document.removeEventListener("click", playOnInteraction);
+          document.removeEventListener("touchstart", playOnInteraction);
+        };
+        document.addEventListener("click", playOnInteraction);
+        document.addEventListener("touchstart", playOnInteraction);
+      }
+    };
+
+    tryPlay();
+  }, []);
 
   // useEffect(() => {
   //   const interval = setInterval(() => {
@@ -58,9 +83,11 @@ export default function Home() {
               {/* image video */}
               <div className="fixed right-0 top-0 w-[425px] h-screen -z-10">
                 <video
+                  ref={videoRef}
                   autoPlay
                   loop
                   muted
+                  preload="auto"
                   playsInline
                   className="w-full h-full object-cover object-center"
                 >
@@ -262,13 +289,13 @@ export default function Home() {
               <div className="w-full h-max py-[50px] mb-80  ">
                 <ParallaxGallery />
               </div>
-              <div className="w-full h-[80vh] mt-[100px]">
+              <div className="w-full h-max mt-[100px]">
                 <CardParallax />
               </div>
               <div className="w-full px-8 h-[20vh] flex flex-col justify-start items-center mt-[-300px] text-center">
                 <div className="mt-[-100px]">
                   <h3 className="font-mono">12 - 10 - 25</h3>
-                  <h1 className="text-[50px] font-MeieScript ">Terimakasih</h1>
+                  <h1 className="text-[50px] font-MeieScript ">Terima Kasih</h1>
                   <p className="font-Kodchasan text-center text-[12px]">
                     Ucapan dan doa yang kamu sampaikan adalah anugerah berarti
                     bagi kami. Kami menantikan momen istimewa untuk merayakannya
